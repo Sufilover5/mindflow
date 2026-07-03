@@ -1,0 +1,37 @@
+.home-page {
+  padding-top: 24px;
+  padding-bottom: 80px;
+}
+
+.fab-write {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--gradient-awaken);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(123, 92, 255, 0.4);
+  z-index: 50;
+  transition: all var(--transition);
+}
+
+.fab-write:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 32px rgba(123, 92, 255, 0.6);
+}
+
+.fab-icon {
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1;
+}
+
+@media (min-width: 641px) {
+  .fab-write {
+    display: none;
+  }
+}

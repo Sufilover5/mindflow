@@ -1,0 +1,199 @@
+/* ===== 灵光启示录 — 全局样式 ===== */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap');
+
+:root {
+  /* 深邃暗底 */
+  --bg: #0a0a14;
+  --bg-elevated: #111122;
+  --bg-card: #111122;
+  --bg-card-hover: #161630;
+  --bg-input: #0d0d20;
+  --bg-overlay: rgba(0, 0, 0, 0.7);
+
+  /* 文字 */
+  --text: #e8e6ff;
+  --text-secondary: #a09cc8;
+  --text-dim: #6b6880;
+
+  /* 启示强调色 */
+  --accent: #7b5cff;
+  --accent-glow: #a78bfa;
+  --accent-dim: rgba(123, 92, 255, 0.12);
+  --accent-border: rgba(123, 92, 255, 0.3);
+
+  /* 渐变 */
+  --gradient-awaken: linear-gradient(135deg, #7b5cff 0%, #4facfe 50%, #00f2fe 100%);
+  --gradient-card-edge: linear-gradient(180deg, #7b5cff 0%, #4facfe 50%, #00f2fe 100%);
+
+  /* 灵感色彩 */
+  --spark-purple: #a78bfa;
+  --spark-cyan: #22d3ee;
+  --spark-green: #34d399;
+  --spark-rose: #fb7185;
+  --spark-amber: #fbbf24;
+
+  /* 边框 */
+  --border: #1e1e3a;
+  --border-glow: rgba(123, 92, 255, 0.25);
+
+  /* 间距 */
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+
+  /* 阴影 */
+  --shadow-card: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 0 20px rgba(123, 92, 255, 0.15);
+  --shadow-glow-strong: 0 0 40px rgba(123, 92, 255, 0.25);
+
+  /* 字体 */
+  --font-sans: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Noto Serif SC', Georgia, 'Times New Roman', serif;
+
+  /* 过渡 */
+  --transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== Reset ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== 滚动条 ===== */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-dim);
+}
+
+/* ===== 链接 ===== */
+a {
+  color: var(--accent-glow);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--spark-cyan);
+}
+
+/* ===== 选中 ===== */
+::selection {
+  background: rgba(123, 92, 255, 0.3);
+  color: var(--text);
+}
+
+/* ===== 动画工具类 ===== */
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 8px rgba(123, 92, 255, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(123, 92, 255, 0.4); }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== 通用按钮 ===== */
+button {
+  font-family: var(--font-sans);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  transition: all var(--transition);
+}
+
+button:focus-visible {
+  box-shadow: 0 0 0 2px var(--accent-glow);
+}
+
+/* ===== 通用输入 ===== */
+input,
+textarea {
+  font-family: var(--font-sans);
+  color: var(--text);
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim), 0 0 20px rgba(123, 92, 255, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  line-height: 1.8;
+}
+
+/* ===== 响应式容器 ===== */
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 0 16px;
+  }
+
+  html {
+    font-size: 15px;
+  }
+}

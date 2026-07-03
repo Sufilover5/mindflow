@@ -1,0 +1,239 @@
+.thought-form {
+  animation: fadeInUp 0.4s ease;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.form-back,
+.form-save {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all var(--transition);
+}
+
+.form-back {
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  padding: 8px;
+}
+
+.form-back:hover {
+  background: var(--bg-card-hover);
+  color: var(--text);
+}
+
+.form-title {
+  flex: 1;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.form-save {
+  background: var(--gradient-awaken);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(123, 92, 255, 0.3);
+}
+
+.form-save:hover:not(:disabled) {
+  box-shadow: 0 4px 20px rgba(123, 92, 255, 0.5);
+  transform: translateY(-1px);
+}
+
+.form-save:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.form-body {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-textarea {
+  width: 100%;
+  min-height: 200px;
+  padding: 20px;
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  line-height: 2;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  resize: none;
+  overflow: hidden;
+  transition: all var(--transition);
+}
+
+.form-textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-dim), 0 0 30px rgba(123, 92, 255, 0.08);
+}
+
+.form-textarea::placeholder {
+  color: var(--text-dim);
+  font-family: var(--font-sans);
+}
+
+.form-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== 置顶开关 ===== */
+.pin-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px dashed var(--border);
+  transition: all var(--transition);
+  width: fit-content;
+}
+
+.pin-toggle:hover {
+  border-color: var(--spark-amber);
+  color: var(--spark-amber);
+  background: rgba(251, 191, 36, 0.06);
+}
+
+.pin-active {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+  color: var(--spark-amber);
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.15);
+}
+
+.pin-active:hover {
+  border-color: var(--spark-amber);
+  color: var(--spark-amber);
+  background: rgba(251, 191, 36, 0.18);
+  box-shadow: 0 0 24px rgba(251, 191, 36, 0.25);
+}
+
+.pin-icon-filled {
+  fill: currentColor;
+}
+
+/* ===== 标签选择器 ===== */
+.tag-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag-chip {
+  padding: 6px 14px;
+  border-radius: 16px;
+  font-size: 0.84rem;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.tag-chip:hover {
+  border-color: var(--accent-border);
+  color: var(--text);
+  background: var(--accent-dim);
+}
+
+.tag-chip-active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  box-shadow: 0 2px 10px rgba(123, 92, 255, 0.25);
+}
+
+.tag-chip-active:hover {
+  background: var(--accent-glow);
+  color: #fff;
+}
+
+.tag-chip-preset {
+  border-style: solid;
+}
+
+/* 自定义标签输入 */
+.custom-tag-input-wrap {
+  display: flex;
+  gap: 8px;
+}
+
+.form-tags-input {
+  flex: 1;
+  font-size: 0.9rem;
+}
+
+.custom-tag-add {
+  padding: 0 16px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  background: var(--accent-dim);
+  color: var(--accent-glow);
+  border: 1px solid var(--accent-border);
+  white-space: nowrap;
+  transition: all var(--transition);
+}
+
+.custom-tag-add:hover:not(:disabled) {
+  background: var(--accent);
+  color: #fff;
+}
+
+.custom-tag-add:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.form-hint {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.form-hint kbd {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+}
